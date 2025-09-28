@@ -1,0 +1,59 @@
+body {
+    background-color: #000000;
+    /* Fondo negro */
+    margin: 0;
+    overflow: hidden;
+    /* Oculta barras de desplazamiento */
+    font-family: 'Arial', sans-serif;
+}
+
+#star-container {
+    width: 100vw;
+    /* Ancho completo de la ventana */
+    height: 100vh;
+    /* Alto completo de la ventana */
+    position: relative;
+}
+
+/* Estilo base para todas las partículas (estrellas, frases, imágenes) */
+.particle {
+    position: absolute;
+    color: white;
+    text-align: center;
+    pointer-events: none;
+    /* Ignora clics para que el fondo sea la interacción principal */
+    transform: translate(-50%, -50%);
+    /* Centra la partícula en su posición */
+}
+
+/* Estilo para las pequeñas estrellas (puntos) */
+.star {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.8;
+}
+
+/* Estilo para las frases de amor */
+.phrase {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffb6c1;
+    /* Color rosa claro para las frases principales */
+    text-shadow: 0 0 10px #ff007f;
+    /* Efecto neón suave */
+    white-space: nowrap;
+}
+
+/* Estilo para las imágenes (las que tú quieres escoger) */
+.image-particle {
+    width: 150px;
+    /* Tamaño de la imagen pequeña */
+    height: 150px;
+    border-radius: 5px;
+    object-fit: cover;
+    /* Asegura que la imagen se vea bien dentro del tamaño */
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
