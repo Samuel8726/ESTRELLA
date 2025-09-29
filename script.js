@@ -124,4 +124,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inicia el bucle de animación
     animate();
+
+    // BLOQUE DE CÓDIGO AÑADIDO PARA FORZAR LA REPRODUCCIÓN DEL AUDIO
+document.addEventListener('click', function() {
+    const audio = document.getElementById('background-audio');
+    
+    // Si el elemento de audio existe, intenta iniciarlo.
+    if (audio) {
+        // Intenta iniciar la reproducción y maneja la promesa (necesario por las políticas de Chrome).
+        audio.play().catch(error => {
+            // Esto solo es para registrar si el navegador bloquea el autoplay, 
+            // pero el clic debería anular el bloqueo.
+            console.log("No se pudo iniciar la reproducción automática, esperando el clic del usuario.");
+        });
+        
+        // **IMPORTANTE:** Remover el listener. Solo necesitamos el clic una vez.
+        document.removeEventListener('click', arguments.callee);
+    }
+});
 });
